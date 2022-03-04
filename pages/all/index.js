@@ -15,8 +15,6 @@ function all({ digi }) {
 
   return (
     <Layout pageTitle="All Page">
-      <p>Ini Halaman All Digimon</p>
-
       {/* start of Filter */}
       <Filter onSelectFilter={onSelectFilter} />
       {/* End of filter */}
