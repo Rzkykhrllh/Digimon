@@ -7,14 +7,15 @@ function Navbar() {
 
   const [currentRoute, setcurrentRoute] = useState(router.pathname);
 
-  useEffect(() => {
-    console.log(currentRoute);
-  }, [currentRoute]);
+  // useEffect(() => {
+  //   console.log(currentRoute);
+  // }, [currentRoute]);
 
   const menuItem = [
     { name: "Home", url: "/" },
     { name: "All Page", url: "/all" },
     { name: "Fetch Page", url: "/fetch" },
+    { name: "Pagination Page", url: "/pagination" },
   ];
 
   return (

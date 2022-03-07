@@ -11,8 +11,6 @@ function All({ digi }) {
     setfilter(filterName);
   };
 
-  // console.log(digi);
-
   return (
     <Layout pageTitle="All Page">
       {/* start of Filter */}
