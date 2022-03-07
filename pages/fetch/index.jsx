@@ -2,9 +2,8 @@ import Layout from "../../components/Layout";
 import { useEffect, useState } from "react";
 import Digimon from "../../components/Digimon";
 import Filter from "../../components/Filter";
+import Image from "next/image";
 
-import Loading from "../../assets/loading.gif";
-import waifu from "../../assets/waifu.jpg";
 
 import digiaxios from "../../api";
 import { GET_DIGIMON } from "../../api";
@@ -61,7 +60,7 @@ function Fetch() {
       {isLoading && (
         <div className="absolute top-0 left-0 z-50 flex w-screen min-h-screen bg-black bg-opacity-80">
           <div className="mx-auto my-auto ">
-            <img src="/loading.gif" alt="" style={{ width: "50px" }} />
+            <Image src="/loading.gif" alt="" style={{ width: "50px" }} width={50} height={50} />
           </div>
         </div>
       )}
