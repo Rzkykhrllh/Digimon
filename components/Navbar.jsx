@@ -21,7 +21,7 @@ function Navbar() {
     <div className=" flex justify-center gap-x-5 bg-[#262D3A] py-3 text-white  z-10 text-lg shadow-md">
       {menuItem.map((item, idx) => (
         <Link href={item.url} key={idx}>
-          <a
+          <a key={idx}
             className={
               item.url == currentRoute
                 ? "text-purple-600 "
