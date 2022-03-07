@@ -4,7 +4,7 @@ import Digimon from "../../components/Digimon";
 import Filter from "../../components/Filter";
 import Layout from "../../components/Layout";
 
-function all({ digi }) {
+function All({ digi }) {
   const [filter, setfilter] = useState("All");
 
   const onSelectFilter = (filterName) => {
@@ -36,7 +36,7 @@ function all({ digi }) {
   );
 }
 
-export default all;
+export default All;
 
 export async function getStaticProps() {
   // Call an external API endpoint to get posts.

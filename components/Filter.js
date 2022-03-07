@@ -1,40 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 function Filter(props) {
-  const { onSelectFilter } = props;
+  const { onSelectFilter, filter } = props;
+
+  const [activeFilter, setActiveFilter] = useState();
+
+  const level = ["All", "Rookie", "In Training", "Champion", "Ultimate"];
+
+  useEffect(() => {
+    if (filter == undefined) setActiveFilter("All");
+    else setActiveFilter(filter);
+  }, [filter]);
 
   return (
-    <div className="flex justify-center max-w-md mx-auto bg-white gap-x-3">
-      <p
-        className="cursor-pointer hover:text-green-200"
-        onClick={() => onSelectFilter("All")}
-      >
-        All
-      </p>
-      <p
-        className="cursor-pointer hover:text-green-200"
-        onClick={() => onSelectFilter("Rookie")}
-      >
-        Rookie
-      </p>
-      <p
-        className="cursor-pointer hover:text-green-200"
-        onClick={() => onSelectFilter("In Training")}
-      >
-        In Training
-      </p>
-      <p
-        className="cursor-pointer hover:text-green-200"
-        onClick={() => onSelectFilter("Champion")}
-      >
-        Champion
-      </p>
-      <p
-        className="cursor-pointer hover:text-green-200"
-        onClick={() => onSelectFilter("Ultimate")}
-      >
-        Ultimate
-      </p>
+    <div className="flex justify-center px-16 py-8 mx-auto text-white gap-x-3">
+      {level.map((item, idx) => (
+        <p
+          key={idx}
+          className={
+            (item !== activeFilter
+              ? "bg-opacity-5 "
+              : "bg-opacity-30 font-bold") +
+            ` px-4 py-2 bg-white cursor-pointer rounded-xl hover:bg-gray-600 hover:bg-opacity-10`
+          }
+          onClick={() => {
+            setActiveFilter(item);
+            onSelectFilter(item);
+          }}
+        >
+          {item}
+        </p>
+      ))}
     </div>
   );
 }
